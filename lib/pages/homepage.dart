@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 import 'gamepage.dart';
+
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -16,57 +17,155 @@ class _HomepageState extends State<Homepage> {
       body: Container(
         constraints: const BoxConstraints.expand(),
         decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/images/bk.jpg'),
-            fit: BoxFit.fill
-          ),
+          gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            colors: [
+              Colors.white,
+              Colors.greenAccent,
+              Colors.green,
+            ],
+          )
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                const SizedBox(
-                  height: 10.0,
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  //color: Colors.indigo,
+                  borderRadius: BorderRadius.circular(8),
+                  gradient: const LinearGradient(
+                      colors: [
+                        Colors.indigo,
+                        Colors.blueAccent
+                      ]
+                  ),
+                  border: Border.all(
+                    color: Colors.black,
+                    width: 2.0,
+                  ),
+                    boxShadow: const [
+                      BoxShadow(
+                          color: Colors.grey ,
+                          blurRadius: 2.0,
+                          offset: Offset(2.0,2.0)
+                      )
+                    ]
                 ),
-                Container(
-                  color: Colors.indigo,
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text('เกมทายสำนวนสุภาษิตไทย',style: TextStyle(
-                      fontSize: 30.0,
-                    ),),
+                child:  Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'เกมทายสำนวนสุภาษิตไทย',
+                    style: GoogleFonts.prompt(
+                      fontSize: 30,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
+              ),
+              const SizedBox(
+                height: 60.0,
+              ),
+              Stack(
+                alignment: AlignmentDirectional.center,
+                  children: [
                 Container(
-                  color: Colors.pink,
+                  padding: const EdgeInsets.all(40),
+                  margin: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade50,
+                    borderRadius: BorderRadius.circular(8),
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Colors.black,
+                        offset:  Offset(
+                          3.0,
+                          3.0,
+                        ), //Offset
+                        blurRadius: 10.0,
+                        spreadRadius: 2.0,
+                      ), //BoxShadow
+                      BoxShadow(
+                        color: Colors.white,
+                        offset:  Offset(0.0, 0.0),
+                        blurRadius: 0.0,
+                        spreadRadius: 0.0,
+                      ), //BoxShadow
+                    ],
+                  ),
                   child: Column(
-                    children: const [
-                      Text("กติกา" ,style: TextStyle(
-                        fontSize: 20.0,
-                      ),),
-                      Text('มีเวลารอบละ 60 วินาที ทายคำสุภาษิตจากรูปภาพ',style: TextStyle(
-                        fontSize: 16.0,
-                      ),),
-                      Text('ทายถูกจะได้รับ 1 คะแนนแต่ถ้าทายผิด จบเกม',style: TextStyle(
-                        fontSize: 16.0,
-                      ),),
-                      Text('เมื่อจบเกม จะแสดงคะแนนสูงสุด',style: TextStyle(
-                        fontSize: 16.0,
-                      ),),
+                    children:  [
+                      const SizedBox(
+                        height: 20.0,
+                      ),
+                      Text(
+                        'มีเวลารอบละ 60 วินาที ทายคำสุภาษิตจากรูปภาพ',
+                        style: GoogleFonts.prompt(
+                          fontSize: 19.0,
+                        ),
+                      ),
+                      Text(
+                        'ทายถูกจะได้รับ 1 คะแนนแต่ถ้าทายผิด จบเกม',
+                        style: GoogleFonts.prompt(
+                          fontSize: 19.0,
+                        ),
+                      ),
+                      Text(
+                        'เมื่อจบเกม จะแสดงคะแนนสูงสุด',
+                        style: GoogleFonts.prompt(
+                          fontSize: 19.0,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20.0,
+                      ),
                     ],
                   ),
                 ),
-                ElevatedButton(onPressed: (){Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => new gamepage()));
-                  }, child: const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text("เริ่มเกม"),
-                ))
-              ],
+                Positioned(
+                  bottom: 0,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => new gamepage()));
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blueAccent,
+                    ),
+                    child:   Text("เริ่มเกม",style: GoogleFonts.prompt(fontSize: 25),),
+                  ),
+                ),
+                    Positioned(
+                      top: 1,
+                      child: Container(
+                        //padding: const EdgeInsets.all(40),
+                        //margin: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            gradient: const LinearGradient(
+                                colors: [
+                                  Colors.indigo,
+                                  Colors.blueAccent
+                                ]
+                            ),
+                            boxShadow: const [
+                              BoxShadow(
+                                  color: Colors.grey ,
+                                  blurRadius: 2.0,
+                                  offset: Offset(2.0,2.0)
+                              )
+                            ]
+                        ),
+                        child:   Padding(
+                          padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+                          child: Text("กติกา",style: GoogleFonts.prompt(fontSize: 25,color: Colors.white),),
+                        ),
+                      ),
+                    ),
+              ]),
+            ],
             ),
-          ],
         ),
       ),
     );
