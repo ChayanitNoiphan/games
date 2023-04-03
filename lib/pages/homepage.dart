@@ -22,8 +22,9 @@ class _HomepageState extends State<Homepage> {
             end: Alignment.bottomLeft,
             colors: [
               Colors.white,
-              Colors.greenAccent,
-              Colors.green,
+              Colors.lightBlueAccent,
+              Colors.blueAccent,
+              Colors.blue,
             ],
           )
         ),

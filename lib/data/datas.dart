@@ -41,6 +41,21 @@ class data {
     }
   }
 
+  String getWord(int index){
+    return word[index];
+  }
+
+  String getMean(int index){
+    return mean[index];
+  }
+
+  bool checkMatch(int left,String word){
+    if(mean[num[left]] == word){
+      return true;
+    }
+    return false;
+  }
+
   List getWordlist(){
     List a = [];
     a.add(word[num[0]]);
