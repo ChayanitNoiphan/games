@@ -172,6 +172,7 @@ class _gamepageState extends State<gamepage> {
     return const Padding(
       padding: EdgeInsets.all(20.0),
       child: SizedBox(
+        width: 200,
         height: 60,
       ),
     );
@@ -214,6 +215,7 @@ class _gamepageState extends State<gamepage> {
     return const Padding(
       padding: EdgeInsets.all(20.0),
       child: SizedBox(
+        width: 200,
         height: 60,
       ),
     );

@@ -49,7 +49,7 @@ class _HomepageState extends State<Homepage> {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    'เกมทายสำนวนสุภาษิตไทย',
+                    'เกมจับคู่สำนวนสุภาษิตไทยกับความหมาย',
                     style: GoogleFonts.prompt(
                       fontSize: 30,
                       color: Colors.white,
