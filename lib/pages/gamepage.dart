@@ -175,11 +175,6 @@ class _gamepageState extends State<gamepage> {
                     checkClickword = null;
                     _point++;
                   });
-                  if (checkAnswerMean[0] == true &&
-                      checkAnswerMean[1] == true &&
-                      checkAnswerMean[2] == true &&
-                      checkAnswerMean[3] == true) {
-                  }
                 } else {
                   alert1Sec("ผิด");
                 }
@@ -220,16 +215,5 @@ class _gamepageState extends State<gamepage> {
                 textAlign: TextAlign.center),
           );
         });
-  }
-
-  void alert(String text) {
-    showDialog<String>(
-      context: context,
-      builder: (BuildContext context) => AlertDialog(
-        content: Text(text,
-            style: GoogleFonts.prompt(fontSize: 20),
-            textAlign: TextAlign.center),
-      ),
-    );
   }
 }
