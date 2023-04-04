@@ -32,7 +32,7 @@ class _gamepageState extends State<gamepage> {
         leading: const BackButton(color: Colors.black),
         backgroundColor: Colors.indigo,
         title: Text(
-          'เกมจับคู่สุภาษิตและความหมายภาษาไทย',
+          'เกมจับคู่สำนวนสุภาษิตกับความหมายให้ถูกต้อง',
           style: GoogleFonts.prompt(),
         ),
         centerTitle: true,
@@ -78,35 +78,52 @@ class _gamepageState extends State<gamepage> {
               ),
               Padding(
                 padding: const EdgeInsets.all(12.0),
-                child: Text("$_point/4",style: GoogleFonts.prompt(fontSize: 20),),
+                child: Text(
+                  "$_point/4",
+                  style: GoogleFonts.prompt(fontSize: 20),
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(onPressed: (){
-                    Navigator.pop(context);
-                  },style: ElevatedButton.styleFrom(
-                    primary: Colors.lightBlueAccent,
-                    padding: const EdgeInsets.all(8),
-                  ), child: Text("กลับหน้าแรก",style: GoogleFonts.prompt(fontSize: 20),),),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.lightBlueAccent,
+                      padding: const EdgeInsets.all(8),
+                    ),
+                    child: Text(
+                      "กลับหน้าแรก",
+                      style: GoogleFonts.prompt(fontSize: 20),
+                    ),
+                  ),
                   const SizedBox(
                     width: 30,
                   ),
-                  ElevatedButton(onPressed: (){
-                    Data = data();
-                    setState(() {
-                      word = [];
-                      mean = [];
-                      init();
-                      _point = 0;
-                      checkAnswer = [false, false, false, false];
-                      checkAnswerMean = [false, false, false, false];
-                      checkOnclick = [false, false, false, false];
-                    });
-                  },style: ElevatedButton.styleFrom(
-                    primary: Colors.lightBlueAccent,
-                    padding: const EdgeInsets.all(8),
-                  ), child: Text("สุ่มสุภาษิตใหม่",style: GoogleFonts.prompt(fontSize: 20),),),
+                  ElevatedButton(
+                    onPressed: () {
+                      Data = data();
+                      setState(() {
+                        word = [];
+                        mean = [];
+                        init();
+                        _point = 0;
+                        checkAnswer = [false, false, false, false];
+                        checkAnswerMean = [false, false, false, false];
+                        checkOnclick = [false, false, false, false];
+                      });
+                    },
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.lightBlueAccent,
+                      padding: const EdgeInsets.all(8),
+                    ),
+                    child: Text(
+                      "สุ่มสำนวนสุภาษิตใหม่",
+                      style: GoogleFonts.prompt(fontSize: 20),
+                    ),
+                  ),
                 ],
               )
             ],
@@ -206,7 +223,7 @@ class _gamepageState extends State<gamepage> {
     showDialog<String>(
         context: context,
         builder: (BuildContext context) {
-          Future.delayed(Duration(seconds: 1), () {
+          Future.delayed(const Duration(seconds: 1), () {
             Navigator.of(context).pop();
           });
           return AlertDialog(
